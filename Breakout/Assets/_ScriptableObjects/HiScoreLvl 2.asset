@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9aba7df3b11ed0342bc4470d09c63af2, type: 3}
-  m_Name: HiScore
+  m_Name: HiScoreLvl 2
   m_EditorClassIdentifier: 
   score: 0
-  hiScore: 1000
+  hiScore: 0

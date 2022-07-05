@@ -10,6 +10,7 @@ public class Puntaje : MonoBehaviour
     public TMP_Text textHiScore;
     public TMP_Text textScore;
     public PuntajeAlto hiScoreSO;
+    public Opciones opcionesSO;
 
     // Start is called before the first frame update
     void Start()
@@ -28,10 +29,10 @@ public class Puntaje : MonoBehaviour
         hiScoreSO.score = 0;
 
     }
-    private void FixedUpdate()
-    {
-        hiScoreSO.score += 5;
-    }
+    //private void FixedUpdate()
+    //{
+    //    hiScoreSO.score += 5;
+    //}
 
     // Update is called once per frame
     void Update()
@@ -43,6 +44,21 @@ public class Puntaje : MonoBehaviour
             textHiScore.text = $"Hi-Score: {hiScoreSO.hiScore}";
             hiScoreSO.Guardar();
             //PlayerPrefs.SetInt("HiScore", score);
+        }
+    }
+    public void AumentarPuntaje(int puntos)
+    {
+        if (opcionesSO.NivelDificultad == Opciones.dificultad.easy)
+        {
+            hiScoreSO.score += puntos;
+        }
+        else if (opcionesSO.NivelDificultad == Opciones.dificultad.normal)
+        {
+            hiScoreSO.score += puntos * 2;
+        }
+        else if (opcionesSO.NivelDificultad == Opciones.dificultad.hard)
+        {
+            hiScoreSO.score += puntos * 3;
         }
     }
 }

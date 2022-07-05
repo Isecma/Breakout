@@ -6,6 +6,6 @@ using UnityEngine;
 public class PuntajeAlto : PuntajePersistente
 {
     public int score = 0;
-    public int hiScore = 1000;
+    public int hiScore = 0;
 
 }
