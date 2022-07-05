@@ -7,11 +7,22 @@ public class Bloque_Madera : Bloque
     // Start is called before the first frame update
     void Start()
     {
-        resistencia = 3;  
+        if (opcionesSO.NivelDificultad == Opciones.dificultad.easy)
+        {
+            resistencia = 3;
+        }
+        else if (opcionesSO.NivelDificultad == Opciones.dificultad.normal)
+        {
+            resistencia = 6;
+        }
+        else if (opcionesSO.NivelDificultad == Opciones.dificultad.hard)
+        {
+            resistencia = 9;
+        }
     }
 
-    public override void RebotarBola()
+    public override void RebotarBola(Collision collision)
     {
-        base.RebotarBola();
+        base.RebotarBola(collision);
     }
 }

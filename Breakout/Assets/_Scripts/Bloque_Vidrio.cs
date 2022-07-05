@@ -8,7 +8,21 @@ public class Bloque_Vidrio : Bloque
     // Start is called before the first frame update
     void Start()
     {
-        resistencia = 2;
+        if (opcionesSO.NivelDificultad == Opciones.dificultad.easy)
+        {
+            resistencia = 2;
+        }
+        else if (opcionesSO.NivelDificultad == Opciones.dificultad.normal)
+        {
+            resistencia = 4;
+        }
+        else if (opcionesSO.NivelDificultad == Opciones.dificultad.hard)
+        {
+            resistencia = 6;
+        }
     }
-
+    public override void RebotarBola(Collision collision)
+    {
+        base.RebotarBola(collision);
+    }
 }
